@@ -14,16 +14,33 @@ const $buttonsWrapper = createElement('div', {
   children: [$button1, $button2, $button3, $button4, $button5],
 });
 
-const $searchImg = createElement('img', { class: 'search-icon', src: './src/images/search.png' });
-const $search = createElement('button', { class: 'button-search', children: $searchImg });
-const $personImg = createElement('img', { class: 'person-icon', src: './src/images/person.png' });
-const $person = createElement('button', { class: 'button-person', children: $personImg });
-const $cartImg = createElement('img', { class: 'cart-icon', src: './src/images/cart.png' });
-const $cart = createElement('button', { class: 'button-cart', children: $cartImg });
+let statusMenu = false;
+
+const renderMenu = () => {
+  if (statusMenu === false) {
+    $menu.classList.add('menu-open');
+    $cartButton.classList.add('cart-open');
+    statusMenu = true;
+  } else {
+    $menu.classList.remove('menu-open');
+    $cartButton.classList.remove('cart-open');
+    statusMenu = false;
+  }
+};
+
+const $searchButton = createElement('span', { class: ['material-icons', 'search-button'], textContent: 'search' });
+const $personButton = createElement('span', { class: ['material-icons', 'person-button'], textContent: 'person' });
+const $cartButton = createElement('span', {
+  class: ['material-icons', 'cart-button'],
+  textContent: 'shopping_cart',
+  onclick: renderMenu,
+});
+
+const $menu = createElement('div', { class: 'menu' });
 
 const $buttonsInfoWrapper = createElement('div', {
   class: 'buttons-info-wrapper',
-  children: [$search, $person, $cart],
+  children: [$searchButton, $personButton, $cartButton, $menu],
 });
 
 const $headerWrapper = createElement('div', {

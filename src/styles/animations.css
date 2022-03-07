@@ -1,0 +1,9 @@
+@keyframes scaleDown {
+  from {
+    transform: scaleX(0);
+    transform-origin: 320px;
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
