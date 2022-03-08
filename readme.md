@@ -4,7 +4,7 @@
 ## Como executar o projeto:
 
 ### Para executar o projeto faço os seguintes passos:
-- Execute o comando na pasta do projeto: ´json-server products.json´
+- Execute o comando na pasta do projeto: `json-server products.json`
 - Utilize live-server no `index.html`
 
 
