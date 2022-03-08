@@ -7,3 +7,13 @@
     transform: scaleX(1);
   }
 }
+
+@keyframes scaleDown2 {
+  from {
+    transform: scaleX(0);
+    transform-origin: 0px;
+  }
+  to {
+    transform: scaleX(1);
+  }
+}

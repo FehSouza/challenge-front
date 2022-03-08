@@ -20,12 +20,20 @@
 }
 
 .logo {
-  width: 260px;
+  width: 40%;
+  max-width: 260px;
+}
+
+.buttons-wrapper {
+  width: 50%;
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .button {
-  border: 1px solid var(--color-white);
-  background-color: var(--color-white);
+  border: none;
+  background-color: transparent;
   width: 7em;
   height: 20px;
   font-family: 'Montserrat', sans-serif;
@@ -39,13 +47,6 @@
   cursor: pointer;
   color: var(--color-primary);
   transform: scale(1.1);
-}
-
-.buttons-wrapper {
-  width: calc(8em * 5);
-  height: 20px;
-  display: flex;
-  justify-content: space-between;
 }
 
 .buttons-info-wrapper {
@@ -111,6 +112,7 @@
 .products-list {
   background-color: var(--color-grey-50);
   overflow-y: auto;
+  min-height: 350px;
   max-height: 350px;
   width: 100%;
   display: flex;
@@ -202,4 +204,177 @@
   cursor: pointer;
   transition-duration: 250ms;
   background-color: var(--color-primary-A);
+}
+
+.buttons-column {
+  display: none;
+  position: relative;
+}
+
+.buttons-column:hover {
+  cursor: pointer;
+  color: var(--color-primary);
+  transform: scale(1.1);
+}
+
+.buttons-column-open {
+  color: var(--color-primary);
+  transform: scale(1.1);
+}
+
+.buttons-column-wrapper {
+  display: none;
+}
+
+.buttons-column-wrapper-open {
+  width: 150px;
+  position: absolute;
+  top: calc(((76px - 24px) / 2) + 24px);
+  right: -20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 5;
+  animation: scaleDown2 400ms linear forwards;
+  box-shadow: -2px 0 8px var(--color-grey-100);
+  background-color: var(--color-grey-50);
+  cursor: auto;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+.buttons-column-wrapper-open::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-grey-50);
+  position: absolute;
+  top: 0;
+  transform: translateY(-45%) rotate(45deg);
+  right: 22px;
+}
+
+.button-column-1,
+.button-column-2,
+.button-column-3,
+.button-column-4,
+.button-column-5 {
+  display: none;
+  margin: 8px;
+}
+
+@media (max-width: 1250px) {
+  .buttons-info-wrapper {
+    min-width: 152px;
+    max-width: 152px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+  }
+  .button-line-1 {
+    display: none;
+  }
+  .button-column-1 {
+    display: flex;
+  }
+  .buttons-column {
+    display: flex;
+    position: relative;
+    margin: 0 20px;
+  }
+  .buttons-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+@media (max-width: 1150px) {
+  .buttons-info-wrapper {
+    min-width: 144px;
+    max-width: 144px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+  }
+  .button-line-2 {
+    display: none;
+  }
+  .button-column-2 {
+    display: flex;
+  }
+  .buttons-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+@media (max-width: 1050px) {
+  .buttons-info-wrapper {
+    min-width: 136px;
+    max-width: 136px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+  }
+  .button-line-3 {
+    display: none;
+  }
+  .button-column-3 {
+    display: flex;
+  }
+  .buttons-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+@media (max-width: 950px) {
+  .buttons-info-wrapper {
+    min-width: 128px;
+    max-width: 128px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+  }
+  .button-line-4 {
+    display: none;
+  }
+  .button-column-4 {
+    display: flex;
+  }
+  .button-line-5 {
+    display: none;
+  }
+  .button-column-5 {
+    display: flex;
+  }
+  .buttons-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+@media (max-width: 850px) {
+  .buttons-info-wrapper {
+    max-width: 120px;
+    min-width: 120px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+  }
+  .logo {
+    max-width: 200px;
+  }
+}
+@media (max-width: 400px) {
+  .buttons-info-wrapper {
+    max-width: 100px;
+    min-width: 100px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+  }
+  .logo {
+    max-width: 200px;
+  }
 }
